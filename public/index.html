@@ -1,0 +1,347 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title"></title>
+    <link rel="shortcut icon" type="image/x-icon" href="./img/logoTop.png">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+
+
+<body>
+
+    <div class="errBackground"></div>
+    <div class="msgBackground"></div>
+    <div class="forms"></div>
+    <div class="forms" id="formsPlay">
+        <form>
+            <small>Partida pública</small>
+            <div class="actions">
+                <input type="text" placeholder="Nombre" id="namePublic">
+                <input type="button" value="Crear" class="primary" id="createPublic">
+            </div>
+            <small class="danger" id="dangerPublic"><br></small>
+        </form>
+        <form>
+            <small>Partida privada</small>
+            <div class="actions">
+                <input type="text" placeholder="Nombre" id="namePrivate">
+                <input type="button" value="Crear" class="danger" id="createPrivate">
+            </div>
+            <small class="danger" id="dangerPrivate"><br></small>
+        </form>
+        <form>
+            <small>Unirse a privada</small>
+            <div class="actions">
+                <input type="text" placeholder="Código" id="idPrivate">
+                <input type="button" value="Unirse" class="success" id="unitPrivate">
+            </div>
+            <small class="danger" id="dangerUnit"><br></small>
+        </form>
+    </div>
+    <div class="forms" id="formsQualify">
+        <form>
+            <small id="textQualify">¿Estás listo para entrar a partida clasificatoria?</small><br>
+            <div class="actions"><br>
+                <input type="button" value="Buscar partida" class="primary all" id="findMatch">
+                <input type="button" value="Cancelar" class="primary all" id="cancelMatch" style="display: none;">
+                <input type="button" value="5" class="primary all efect" id="aceptMatch" style="display: none; background: var( --color1 ); color: var( --color-white );">
+            </div>
+            <small class="danger" id="aquaQualify"><br></small>
+        </form>
+    </div>
+    <div class="forms" id="formsFriend">
+        <form>
+            <small>Añadir amigo</small><br>
+            <div class="actions">
+                <input type="text" placeholder="Id de jugador" id="idFriendUser">
+                <input type="button" value="Añadir" class="primary" id="submitPutFriend">
+            </div>
+            <small class="danger" id="msgErrPutFriend"><br></small>
+        </form>
+    </div>
+    <div class="forms" id="formsDelete">
+        <form>
+            <small>¿Estas seguro de querer eliminar tu cuenta?</small><br>
+            <div class="actions">
+                <input type="password" placeholder="Escribe tu contraseña" id="passwordDelete">
+                <input type="button" value="Eliminar" class="primary" id="submitDelete">
+            </div>
+            <small class="danger" id="msgErrDelete"><br></small>
+        </form>
+    </div>
+
+    <div class="container">
+
+        <!-- aside -->
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <img src="./img/logo.png" id="logo" alt="mekymaa">
+                    <h2><span class="danger">MEKY</span>MAA</h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">close</span>
+                </div>
+            </div>
+            <div class="nav">
+                <a id="play">
+                    <span class="material-icons-sharp">play_arrow</span>
+                    <h3>Jugar</h3>
+                </a>
+                <a id="progress">
+                    <span class="material-icons-sharp">line_axis</span>
+                    <h3>Progreso</h3>
+                </a>
+                <a id="ranking">
+                    <span class="material-icons-sharp">leaderboard</span>
+                    <h3>Ranking</h3>
+                </a>
+                <a id="social">
+                    <span class="material-icons-sharp">mail_outline</span>
+                    <h3>Social &nbsp;</h3>
+                    <span class="message-count" id="messageCount" style="display: none;"></span>
+                </a>
+                <a id="settings">
+                    <span class="material-icons-sharp">settings</span>
+                    <h3>Ajustes</h3>
+                    <span class="message-count" id="slopesCount" style="display: none;"></span>
+                </a>
+                <a id="logout">
+                    <span class="material-icons-sharp">logout</span>
+                    <h3>Cerrar sesión</h3>
+                </a>
+            </div>
+        </aside>
+
+        <!-- mainPlay -->
+        <main id="mainPlay" style="display: none;">
+            <h1>Modos de juego</h1>
+            <div class="cards">
+                <div class="card1" style="cursor: pointer;" id="normalMatch">
+                    <span class="material-icons-sharp">smart_toy</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Entrenamiento</h3>
+                        </div>
+                    </div>
+                    <small class="small-text">Aprende a mecanografiar, o si ya sabes practica y mejora tu nivel, en este modo no hay quien gane ya que es individual, asi que entrena y preparate para ganar tus proximas partidas.</small>
+                </div>
+                <div class="card2" style="cursor: pointer;" id="playNormal">
+                    <span class="material-icons-sharp">games</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Normal</h3>
+                        </div>
+                    </div>
+                    <small class="small-text">Aqui podras entrar a salas o crear tu propias partidas publicas / privadas, para enfrentarte contra otros jugadores y ver quien es el mas rápido.</small>
+                </div>
+                <div class="card3" style="cursor: pointer;" id="qualifyMatch">
+                    <span class="material-icons-sharp">stacked_line_chart</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Clasificatoria</h3>
+                        </div>
+                    </div>
+                    <small class="small-text">Compite contra otro jugador para ganar mekypoints (mp's) y estar en el top de los 3 mejores jugadores, ¿Hasta cuantos mekypoints crees llegar?</small>
+                </div>
+            </div>
+            <div class="table-button">
+                <h1>Partidas por comenzar</h1>
+                <div class="scroll">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="ocult">Anfitrion</th>
+                                <th class="ocult">Nombre de partida</th>
+                                <th>Jugadores en sala</th>
+                                <th>¿Deseas unirte?</th>
+                            </tr>
+                        </thead>
+                        <tbody id="matchs">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+        <!-- mainProgress -->
+        <main id="mainProgress" style="display: none;">
+            <h1>Estadísticas</h1>
+            <div class="cards">
+                <div class="card1">
+                    <span class="material-icons-sharp">keyboard</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>ppm</h3>
+                            <h1 id="ppmUser"></h1>
+                        </div>
+                        <div class="progress">
+                            <svg><circle cx="38" cy="38" r="36"></circle></svg>
+                            <div class="number"><p id="ppmUserNumber"></p></div>
+                        </div>
+                    </div>
+                    <small class="small-text">Palabras por minuto</small>
+                </div>
+                <div class="card2">
+                    <span class="material-icons-sharp">emoji_events</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>win rate</h3>
+                            <h1 id="winrateUser"></h1>
+                        </div>
+                        <div class="progress">
+                            <svg><circle cx="38" cy="38" r="36"></circle></svg>
+                            <div class="number"><p id="winrateUserNumber"></p></div>
+                        </div>
+                    </div>
+                    <small class="small-text">Porcentaje de victorias</small>
+                </div>
+                <div class="card3">
+                    <span class="material-icons-sharp">military_tech</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>mp</h3>
+                            <h1 id="mpUser"></h1>
+                        </div>
+                        <div class="progress">
+                            <svg><circle cx="38" cy="38" r="36"></circle></svg>
+                            <div class="number"><p id="mpUserNumber"></p></div>
+                        </div>
+                    </div>
+                    <small class="small-text">Mekypoints </small>
+                </div>
+            </div>
+            <div class="table-button">
+                <h1 class="ocult2">Partidas recientes</h1>
+                <div class="scroll ocult2">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tipo de partida</th>
+                                <th>Puesto</th>
+                                <th>Fecha</th>
+                                <th>Palabras por minuto</th>
+                            </tr>
+                        </thead>
+                        <tbody id="historyUser">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+        <!-- mainRanking -->
+        <main id="mainRanking" style="display: none;">
+            <h1>Mejores 3 jugadores</h1>
+            <div class="cards">
+                <div class="card1" id="top1"></div>
+                <div class="card2" id="top2"></div>
+                <div class="card3" id="top3"></div>
+            </div>
+            <div class="table-button">
+                <h1 class="ocult2">Ranking de tus amigos</h1>
+                <div class="scroll ocult2">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Mp</th>
+                                <th>Palabras por minuto</th>
+                                <th>%Win rate </th>
+                            </tr>
+                        </thead>
+                        <tbody id="rankingFriendsUser"></tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+        <!-- mainSocial -->
+        <main id="mainSocial" style="display: none;">
+            <h1 id="chatWith"></h1>
+            <div class="chat">
+                <div class="messages" id="messages">
+                </div>
+                <input type="text" placeholder="Enviar mensaje" id="message">
+            </div>
+        </main>
+
+        <!-- mainSettings -->
+        <main id="mainSettings" style="display: none;">
+            <h1>Información</h1>
+            <div class="cards">
+                <div class="card1" id="informationUser"></div>
+                <div class="actions">
+                    <a href="modify.html" class="success" onclick="localStorage.setItem( 'modify', 'data' ) ">Modificar datos</a>
+                    <a href="modify.html" class="primary" onclick="localStorage.setItem( 'modify', 'password' ) ">Cambiar contraseña</a>
+                    <a id="deleteAccount" class="danger">Eliminar cuenta</a>
+                </div>
+                <div class="card3">
+                    <div class="color">
+                        <input type="color" id="color1"><p>Color primario</p>
+                    </div>
+                    <div class="color">
+                        <input type="color" id="color2"><p>Color secundario</p>
+                    </div>
+                    <div class="color">
+                        <input type="color" id="color3"><p>Color terciario</p>
+                    </div>
+                    <div>
+                        <a href="./index.html"><small class="small-text">¿Ya terminaste?<br> Guarda cambios y mira la magia</small></a>
+                    </div>
+                </div>
+            </div>
+            <div class="table-button">
+                <h1 class="ocult2">Solicitudes de amistad</h1>
+                <div class="scroll ocult2">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Mp</th>
+                                <th>Aceptar</th>
+                                <th>Rechazar</th>
+                            </tr>
+                        </thead>
+                        <tbody id="slopesUser">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+        <!-- right -->
+        <div class="right">
+            <div class="top">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+                <div class="theme-toggler">
+                    <span class="material-icons-sharp">light_mode</span>
+                    <span class="material-icons-sharp active">dark_mode</span>
+                </div>
+                <div class="profile" id="profileUser"></div>
+            </div>
+            <div class="actual-people" id="friendsUser">
+            </div>
+        </div>
+
+        <!-- scripts -->
+        <script src="./socket.io/socket.io.js"></script>
+        <script src="./js/components.js"></script>
+        <script src="./js/main.js"></script>
+        <script src="./js/index.js"></script>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prepartida</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./img/logoTop.png">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/room.css">
+</head>
+
+
+
+<body>
+
+    <div class="errBackground"></div>
+    <div class="msgBackground"></div>
+    <div class="forms"></div>
+
+    <div class="container">
+
+        <!-- aside -->
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <img src="./img/logo.png" id="logo" alt="mekymaa">
+                    <h2><span class="danger">MEKY</span>MAA</h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">close</span>
+                </div>
+            </div>
+            <div class="nav">
+                <p></p>
+                <p id="uid"></p>
+                <p class="success" id="totalMembers"></p>
+                <p class="primary" id="nameMatch"></p><br>
+                <div class="chat" id="chat"></div>
+                <input type="text" placeholder="Enviar mensaje" id="message">
+                <a href="./index.html">
+                    <span class="material-icons-sharp primary">logout</span>
+                    <h3 class="primary">Salir de la sala</h3>
+                </a>
+            </div>
+        </aside>
+
+        <!-- load -->
+        <div class="load">
+            <img src="./img/logo.png" alt="" id="logoPreload">
+            <div class="textPreload">
+                <h1><span class="danger">MEKY</span>MAA</h1>
+                <p id="oops">Esperando jugadores ...</p>
+                <small id="here"></small>
+            </div>
+        </div>
+
+        <!-- right -->
+        <div class="right">
+            <div class="top">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+                <div class="theme-toggler">
+                    <span class="material-icons-sharp">light_mode</span>
+                    <span class="material-icons-sharp active">dark_mode</span>
+                </div>
+                <div class="profile" id="profileUser"></div>
+            </div>
+            <div class="actual-people" id="friendsUser"></div>
+        </div>
+
+        <!-- scripts -->
+        <script src="./js/main.js"></script>
+        <script src="./socket.io/socket.io.js"></script>
+        <script src="./js/room.js"></script>
+
+    </div>
+
+</body>
+</html>

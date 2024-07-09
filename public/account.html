@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title"></title>
+    <link rel="shortcut icon" type="image/x-icon" href="./img/logoTop.png">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="./css/account.css">
+</head>
+
+
+
+<body>
+
+    <div class="errBackground"></div>
+    <div class="msgBackground"></div>
+    <div class="forms"></div>
+
+    <div class="container">
+
+        <!-- aside -->
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <img src="./img/logo.png" id="logo" alt="mekymaa">
+                    <h2><span class="danger">MEKY</span>MAA</h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">close</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- loginForm -->
+        <main id="loginForm" style="display: none;">
+            <form>
+                <h1>Iniciar sesión</h1>
+                <input type="email" placeholder="Correo" class="small-text" id="emailLogin">
+                <input type="password" placeholder="Contraseña" class="small-text" id="passwordLogin">
+                <input type="submit" value="¡Continuar!" id="submitLogin">
+                <p class="danger sesion"><a id="signup">¿No tienes una cuenta? Registrate</a></p>
+            </form>
+        </main>
+
+
+        <!-- signupForm -->
+        <main id="signupForm" style="display: none;">
+            <form>
+                <h1>Crear cuenta</h1>
+                <input type="email" placeholder="Correo" class="small-text" id="emailSignup">
+                <input type="text" placeholder="Nombre" class="small-text" id="nameSignup">
+                <input type="password" placeholder="Contraseña" class="small-text" id="passwordSignup">
+                <input type="submit" value="¡Comenzar!" id="submitSignup">
+                <p class="danger sesion"><a id="login">¿Ya tienes una cuenta? Inicia sesion</a></p>
+            </form>
+        </main>
+
+        <!-- right -->
+        <div class="right">
+            <div class="top">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+                <div class="theme-toggler">
+                    <span class="material-icons-sharp">light_mode</span>
+                    <span class="material-icons-sharp active">dark_mode</span>
+                </div>
+                <div class="profile">
+                    <div class="info">
+                        <p>Hola, <b>Desconocido</b></p>
+                        <small class="small-text">¿Ya estás preparado?</small>
+                    </div>
+                    <span class="people"></span>
+                </div>
+            </div>
+            <a id="signupBtn" style="display: none;">
+                <div class="actual-people">
+                    <div class="item add-people">
+                        <div>Crear cuenta</div>
+                    </div>
+                </div>
+            </a>
+            <a id="loginBtn" style="display: none;">
+                <div class="actual-people">
+                    <div class="item add-people">
+                        <div>Iniciar sesión</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- scripts -->
+        <script src="./js/components.js"></script>
+        <script src="./js/main.js"></script>
+        <script src="./js/account.js"></script>
+
+    </div>
+
+</body>
+</html>

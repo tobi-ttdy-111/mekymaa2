@@ -1,0 +1,24 @@
+{
+  "name": "mekymaa",
+  "version": "0.0.1",
+  "description": "mekymaa highlight with keyboard",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "tobi-ttdy-111",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cloudinary": "^1.30.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-fileupload": "^1.3.1",
+    "express-validator": "^6.14.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.3",
+    "socket.io": "^4.5.1",
+    "uuidv4": "^6.2.13"
+  }
+}
