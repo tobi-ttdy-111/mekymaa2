@@ -107,10 +107,12 @@ const socketConnection = () => {
             messages.innerHTML += `
                 <div class="message">
                 <p><span class="player ${ aleatoryColor() }">${ payload.name } </span></p>
-                <p id="here"></p>
+                <p class="here"></p>
                 </div>
             `;
-            here.innerHTML = payload.message;
+            const here = document.querySelectorAll( '.here' );
+            const lastHere = here[ here.length - 1 ];
+            lastHere.innerHTML = payload.message;
             messages.scrollTop = 100000000000;
             return;
         };
